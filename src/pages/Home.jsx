@@ -75,7 +75,7 @@ const Home = () => {
   ];
   return (
     <main>
-      <header className="bg-primary-500 text-black flex flex-col justify-center gap-10 relative overflow-hidden">
+      <header className="bg-primary-500 pt-24 md:pt-0 text-black flex flex-col justify-center gap-10 relative overflow-hidden">
         <div className="px-20 md:px-60 pb-10 md:pb-24 lg:pb-52 mt-10 md:mt-28 lg:mt-60 flex flex-col gap-16">
           <h1 className="text-2xl md:text-5xl lg:text-7xl font-bold w-10/12">
             Let&apos;s create something great together.

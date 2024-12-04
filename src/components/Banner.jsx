@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+// IMAGES
+import hands from "../assets/images/hands.png";
 // ICONS
 import logo from "../assets/images/logo.svg";
-import hands from "../assets/images/hands.svg";
 
 const Banner = ({
   text1 = "Grow Your Business.",

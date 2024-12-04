@@ -2,17 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 // ICONS
 import mouse from "../assets/icons/mouse.svg";
-import logo from "../assets/images/logo.svg";
 
 const Header = ({ title, imageLeft, imageRight, icon }) => {
   return (
     <header className="relative bg-primary-500">
-      <div className="absolute top-16 left-10 md:left-20">
-        <img className="h-8 w-28" src={logo} alt="Logo" />
-      </div>
       <div className="flex flex-col items-center ">
         <div className="flex flex-col items-center">
-          <h1 className=" font-bold text-4xl md:text-7xl mt-72 mb-20 text-center w-9/12">
+          <h1 className=" font-bold text-4xl md:text-7xl mt-64 mb-20 text-center w-9/12">
             {title}
           </h1>
         </div>
