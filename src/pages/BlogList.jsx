@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // COMPONENTS
 import Header from "../components/Header";
 import Card from "../components/Card";
@@ -8,45 +8,25 @@ import hands from "../assets/images/hands.png";
 // ICONS
 import mouse from "../assets/icons/mouse.svg";
 
+import { useSelector, useDispatch } from "react-redux";
+import { getAllBlog } from "../redux/slices/blogSlice";
+
 const BlogList = () => {
-  const data = [
-    {
-      image: hands,
-      title: "Article 1",
-      desc: "Article 1 description",
-      key: "1",
-    },
-    {
-      image: hands,
-      title: "Article 2",
-      desc: "Article 2 description",
-      key: "2",
-    },
-    {
-      image: hands,
-      title: "Article 3",
-      desc: "Article 3 description",
-      key: "3",
-    },
-    {
-      image: hands,
-      title: "Article 4",
-      desc: "Article 4 description",
-      key: "4",
-    },
-    {
-      image: hands,
-      title: "Article 5",
-      desc: "Article 5 description",
-      key: "5",
-    },
-    {
-      image: hands,
-      title: "Article 6",
-      desc: "Article 6 description",
-      key: "6",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { blogs, isLoading, isError, message } = useSelector((state) => state.blog);
+  
+  useEffect(() => {
+    dispatch(getAllBlog(1));
+  }, [dispatch]);
+
+
+  if(isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if(isError) {
+    return <div>{message.message}</div>
+  }
 
   return (
     <main>
@@ -64,7 +44,7 @@ const BlogList = () => {
           Meet the heroes behind the magic
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-20">
-          {data.map((item, index) => (
+          {blogs?.map((item, index) => (
             <Card key={index} readMore={true} data={item} />
           ))}
         </div>

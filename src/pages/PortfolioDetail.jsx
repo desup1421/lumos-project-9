@@ -1,16 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 // COMPONENTS
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 // IMAGES
 import hands from "../assets/images/hands.png";
-import office from "../assets/images/office.png";
 // ICONS
 import mouse from "../assets/icons/mouse.svg";
+// REDUX
+import { useSelector, useDispatch } from "react-redux";
+import { getPortfolioDetail } from "../redux/slices/portfolioSlice";
+import DOMPurify from "dompurify";
+import parse from "html-react-parser";
 
 const PortfolioDetail = () => {
-    const {id} = useParams();
+  const dispatch = useDispatch();
+  const { portfolio, isLoading, isError, message } = useSelector(
+    (state) => state.portfolio
+  );
+  const { id } = useParams();
+  useEffect(() => {
+    dispatch(getPortfolioDetail(id));
+  }, [dispatch, id]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (isError) {
+    return <div>{message}</div>;
+  }
+  if (!portfolio) {
+    return <div>No portfolio found</div>;
+  }
+
   return (
     <main>
       <Header title="We work with love." imageRight={hands} />
@@ -19,9 +41,11 @@ const PortfolioDetail = () => {
       </div>
 
       <section className="p-10 grid gap-5">
-        <img src={office} alt="Office" />
-        <h2 className="text-4xl font-bold">Portfolio Title</h2>
-        <div>{`Content of key: ${id}`}</div>
+        <div className="overflow-hidden">
+          <img className="w-full object-cover" src={portfolio.banner} alt={portfolio.title} />
+        </div>
+        <h2 className="text-4xl font-bold">{portfolio.title}</h2>
+        <div>{parse(DOMPurify.sanitize(portfolio.content))}</div>
       </section>
 
       <section className="my-10">
