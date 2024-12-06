@@ -19,9 +19,12 @@ const Banner = ({
           <p className="font-bold text-xl">{text1}</p>
           <p className="font-bold text-xl">{text2}</p>
         </div>
-        <button className="bg-black col-span-3 md:col-span-1 text-white font-semibold">
+        <a
+          className="bg-black col-span-3 md:col-span-1 text-white font-semibold flex justify-center items-center py-3"
+          href="tel:+6257575757"
+        >
           {buttonText}
-        </button>
+        </a>
       </div>
       <div className="flex justify-end">
         <img className="h-32" src={image} alt="banner image" />

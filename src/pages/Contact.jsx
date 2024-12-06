@@ -9,6 +9,7 @@ import sideContact from "../assets/images/side-contact.png";
 import office from "../assets/images/office.png";
 // ICONS
 import mouse from "../assets/icons/mouse.svg";
+import ClientList from "../components/ClientList";
 
 const Contact = () => {
   return (
@@ -118,11 +119,14 @@ const Contact = () => {
         <Metrics />
       </section>
 
-      <section className="my-20 flex flex-col gap-10 items-center">
+      <section className="my-20 flex flex-col gap-20 items-center">
         <h2 className="text-center text-2xl lg:text-3xl font-bold md:w-4/6 lg:w-2/6">
           We worked with the world&apos;s biggest brands and the most innovative
           startups
         </h2>
+        <div>
+          <ClientList/>
+        </div>
       </section>
 
       <section className="my-14">

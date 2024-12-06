@@ -1,10 +1,10 @@
 import React from "react";
 // COMPONENTS
-import Card from "../components/Card";
 import Banner from "../components/Banner";
 import HeaderFilter from "../components/HeaderFilter";
 import TestimonialCard from "../components/TestimonialCard";
-import CardPortfolio from "../components/CardPortfolio";
+import HomePortfolio from "../components/HomePortfolio";
+import HomeArticle from "../components/HomeArticle";
 // IMAGE
 import sideImage from "../assets/images/side-image.png";
 import heroImage from "../assets/images/hero-element.png";
@@ -14,6 +14,7 @@ import icon2 from "../assets/icons/search-normal.svg";
 import icon3 from "../assets/icons/briefcase.svg";
 import icon4 from "../assets/icons/scroll.svg";
 import arrow from "../assets/icons/arrow.svg";
+import ClientList from "../components/ClientList";
 
 const Home = () => {
   // Data for branding section
@@ -36,43 +37,6 @@ const Home = () => {
       text: "No-code development",
     },
   ];
-  const portfolio = [
-    {
-      image: "https://picsum.photos/100",
-      title: "Project 1",
-      key: "1",
-    },
-    {
-      image: "https://picsum.photos/200",
-      title: "Project 2",
-      key: "2",
-    },
-    {
-      image: "https://picsum.photos/100/200",
-      title: "Project 3",
-      key: "3",
-    },
-    {
-      image: "https://picsum.photos/300",
-      title: "Project 4",
-      key: "4",
-    },
-    {
-      image: "https://picsum.photos/400",
-      title: "Project 5",
-      key: "5",
-    },
-    {
-      image: "https://picsum.photos/500",
-      title: "Project 6",
-      key: "6",
-    },
-    {
-      image: "https://picsum.photos/600",
-      title: "Project 7",
-      key: "7",
-    },
-  ];
   return (
     <main>
       <header className="bg-primary-500 pt-24 md:pt-0 text-black flex flex-col justify-center gap-10 relative overflow-hidden">
@@ -80,8 +44,8 @@ const Home = () => {
           <h1 className="text-2xl md:text-5xl lg:text-7xl font-bold w-10/12">
             Let&apos;s create something great together.
           </h1>
-          <div className="flex gap-2">
-            <p className="font-bold text-base md:text-xl uppercase">Book a free call</p>
+          <div className="flex gap-2 z-20">
+            <a href="tel:+6257575757" className="font-bold text-base md:text-xl uppercase">Book a free call</a>
             <img src={arrow} alt="arrow icon" />
           </div>
         </div>
@@ -122,7 +86,7 @@ const Home = () => {
             We help bussinesses grow, launch products and build enduring
             relationships with our comunities.
           </p>
-          <a className="uppercase font-semibold text-center lg:text-start my-3 lg:my-0 underline">
+          <a href="#" className="uppercase font-semibold text-center lg:text-start my-3 lg:my-0 underline">
             our info
           </a>
         </div>
@@ -130,15 +94,7 @@ const Home = () => {
 
       {/* WORK DISPLAY */}
       <section>
-        <HeaderFilter />
-        {/* IMAGES */}
-        <div className="columns-2 md:columns-4 gap-4 space-y-4">
-          {
-            portfolio.map((item, index) => (
-              <CardPortfolio key={index} data={item} />
-            ))
-          }
-        </div>
+        <HomePortfolio />
       </section>
 
       {/* STEPS */}
@@ -197,7 +153,7 @@ const Home = () => {
 
         <p className="text-center px-5 mt-20">
           Wherever you are in your journey, we&apos;d love to hear from you.{" "}
-          <a href="#" className="font-semibold underline">
+          <a href="tel:+6257575757" className="font-semibold underline">
             Book a free call
           </a>
         </p>
@@ -226,43 +182,13 @@ const Home = () => {
       </section>
 
       {/* Clients */}
-      <section className="md:my-20 p-28 lg:p-60 bg-black/5">
-        <div className="grid grid-cols-4 opacity-70">
-          <div className="border-r border-b border-black/60 pt-1">
-            <img src="https://picsum.photos/300/200" alt="" />
-          </div>
-          <div className="border-r border-b border-black/60 pt-1">
-            <img src="https://picsum.photos/300/200" alt="" />
-          </div>
-          <div className="border-r border-b border-black/60 pt-1">
-            <img src="https://picsum.photos/300/200" alt="" />
-          </div>
-          <div className="border-l border-b border-black/60 pt-1">
-            <img src="https://picsum.photos/300/200" alt="" />
-          </div>
-          <div className="border-r border-t border-black/60 pb-1">
-            <img src="https://picsum.photos/300/200" alt="" />
-          </div>
-          <div className=" border-l border-t border-black/60 pb-1">
-            <img src="https://picsum.photos/300/200" alt="" />
-          </div>
-          <div className="border-l  border-t border-black/60 pb-1">
-            <img src="https://picsum.photos/300/200" alt="" />
-          </div>
-          <div className="border-l border-t border-black/60 pb-1">
-            <img src="https://picsum.photos/300/200" alt="" />
-          </div>
-        </div>
+      <section className="md:my-20 p-28 lg:p-60 opacity-70">
+        <ClientList />
       </section>
 
       {/* articles */}
       <section className="md:my-40 mx-2">
-        <HeaderFilter title="Our Work So Far" tags={["See All"]} />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 md:px-32 gap-5">
-          <Card title="MyTitle" readMore={true} />
-          <Card title="MyTitle" readMore={true} />
-          <Card title="MyTitle" readMore={true} />
-        </div>
+        <HomeArticle />
       </section>
 
       {/* BANNER */}

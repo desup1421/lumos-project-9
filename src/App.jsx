@@ -8,7 +8,6 @@ import Portfolio from "./pages/Portfolio";
 import PortfolioDetail from "./pages/PortfolioDetail";
 import BlogList from "./pages/BlogList";
 import BlogDetail from "./pages/BlogDetail";
-import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 // LAYOUTS
 import Navbar from "./layouts/Navbar";
@@ -25,7 +24,6 @@ const App = () => {
         <div className="max-w-full">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
