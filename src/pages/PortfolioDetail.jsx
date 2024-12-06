@@ -32,7 +32,6 @@ const PortfolioDetail = () => {
   if (!portfolio) {
     return <div>No portfolio found</div>;
   }
-  console.log(portfolio)
 
   return (
     <main>

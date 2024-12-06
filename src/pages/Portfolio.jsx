@@ -21,8 +21,6 @@ const Portfolio = () => {
     dispatch(getPortfolio(currentPage));
   }, [dispatch, currentPage]);
 
-  console.log(portfolios);
-
   if (isLoading) {
     return <div>Loading...</div>;
   }

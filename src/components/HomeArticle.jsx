@@ -24,8 +24,8 @@ const HomeArticle = () => {
     <>
       <HeaderFilter title="Our Work So Far" tags={["See All"]} />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 md:px-32 gap-5">
-        {blogs.map((item) => (
-          <Card key={item.id} data={item} readMore={true} />
+        {blogs.map((item, index) => (
+          <Card key={index} data={item} readMore={true} />
         ))}
       </div>
     </>

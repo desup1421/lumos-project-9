@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 const Card = ({ data, readMore }) => {
-  console.log(data);
   const navigate = useNavigate();
   return (
     <div className="w-full bg-base-100 shadow-xl p-5 flex flex-col gap-5 border rounded-md">

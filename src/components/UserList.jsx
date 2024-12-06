@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 const UserList = () => {
   const dispatch = useDispatch();
   const { users, isLoading } = useSelector((state) => state.user);
-  console.log(users)
-  console.log(isLoading)
 
   useEffect(() => {
       dispatch(getUsers());

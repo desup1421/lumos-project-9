@@ -19,7 +19,6 @@ const BlogList = () => {
     dispatch(getAllBlog(1));
   }, [dispatch]);
 
-  console.log(blogs)
 
   if(isLoading) {
     return <div>Loading...</div>

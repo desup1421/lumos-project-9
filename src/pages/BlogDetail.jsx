@@ -28,7 +28,6 @@ const BlogDetail = () => {
   if (isError) {
     return <div>{message.message}</div>;
   }
-  console.log(blog.content)
 
   return (
     <main>
